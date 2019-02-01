@@ -4,14 +4,21 @@ Generate dummy/mock data for BigQuery using json schema file.
 
 Generated dummy data file can be loaded to BigQuery.
 
+It requires `Python >=2.6, !=3.0.*, !=3.1.*`
+
 ## How to use
 
 Clone this repository.
 
 ```
-git clone git@github.com:satoshi03/mock-data-generator-bigquery.git
+git clone git@github.com:tokencard/mock-data-generator-bigquery.git
 ```
 
+Install the dependencies
+```
+pip install six
+
+```
 Run generator.
 
 ```
