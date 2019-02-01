@@ -17,7 +17,6 @@ git clone git@github.com:tokencard/mock-data-generator-bigquery.git
 Install the dependencies
 ```
 pip install six
-
 ```
 Run generator.
 
@@ -49,6 +48,15 @@ Json schema file for BigQuery defines field name, data type and mode.
 |type|data type|INTEGER, STRING, FLOAT, TIMESTAMP, RECORD is supported|
 |mode|write mode|REQUIRED, NULLABLE, REPEATED is supported|
 
+## Loading data into Bigquery (example)
+```
+    ## This loads data to:
+    ### Project: development-65e9a64cd95055da
+    ### Dataset: kraken_test_ledger_history
+    ### Table: contis_scheme_transactions
+
+    bq load --location europe-west2 --noreplace --source_format=NEWLINE_DELIMITED_JSON --project_id development-65e9a64cd95055da kraken_test_ledger_history.contis_scheme_transactions output.json
+```
 
 ## Examples
 
