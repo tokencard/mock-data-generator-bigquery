@@ -60,10 +60,6 @@ def generate(schema):
             else:
                 dic[column['NAME']] = [mockdata(column['TYPE']) for i in range(0, random.randrange(MAX_REPEAT_NUM) + 1)]
         else:
-            if column['MODE'] == 'NULLABLE':
-                if random.randint(0, 1):
-                    continue
-
             if column['TYPE'] == 'RECORD':
                 dic[column['NAME']] = generate(column['FIELDS'])
             else:
@@ -90,7 +86,7 @@ def to_upper(schema):
 
 if __name__ == "__main__":
     args = parser.parse_args()
-    with open(args.input, 'r') as ijf, open(args.o, 'w') as ojf:
-        schema = to_upper(json.load(ijf))
-        for l in range(0, args.l):
-            ojf.write(json.dumps(generate(schema)) + '\n')
+    with open(args.input, 'r') as _file, open(args.o, 'w') as file_writter:
+        schema = to_upper(json.load(_file))
+        for row_to_generate in range(0, args.l):
+            file_writter.write(json.dumps(generate(schema)) + '\n')

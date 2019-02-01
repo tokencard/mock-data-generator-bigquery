@@ -31,7 +31,7 @@ Then, dummy data file named "output.json" is created.
 cat output.json
 ```
 
-## Options
+## Arguments
 
 |option|description|default|
 |:---|:---|:---|
